@@ -1,0 +1,20 @@
+p {
+  font-family: Lato;
+}
+.red{
+  padding: 5px;
+  margin: 5px;
+  background-color: red;
+}
+.wight{
+  background-color: aqua;
+  padding-left: 3px;
+}
+.lightblue{
+  background-color: lightblue;
+  padding-left: 3px;
+}
+
+.itemList{
+ border-bottom: 3px solid black;
+}

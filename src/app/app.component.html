@@ -1,0 +1,91 @@
+<!-- <hello name="{{ name }}"></hello>
+<div *ngIf="home">Start editing to see some magic happen :)</div> -->
+
+<section>
+  <h1>ng-template</h1>
+
+  <ng-template [ngIf]="home">Hi hello</ng-template>
+
+  <ng-template>Hi</ng-template>
+
+  <ng-template *ngIf="home">good</ng-template>
+
+  <div *ngIf="home; else goHome">Madhan</div>
+
+  <ng-template *ngIf="true; then goHome">ganapathy</ng-template>
+  
+  <ng-template #goHome
+    ><br />
+    Denna</ng-template
+  >
+
+  <ng-template *ngIf="isgood; then goHome"></ng-template>
+  <ng-template #goGood><br />Good</ng-template>
+</section>
+<hr />
+
+<section>
+  <h1>ng-container</h1>
+  <ng-container class="itemList">items List</ng-container>
+
+  <div class="itemList">hi</div>
+
+  <div *ngFor="let item of items" class="red">
+    <div *ngIf="item.id" class="wight">{{ item.name }}</div>
+  </div>
+
+  <ng-container *ngFor="let item of items" class="red">
+    <div *ngIf="item.id" class="lightblue">{{ item.name }}</div>
+  </ng-container>
+</section>
+<hr />
+
+<!-- <section>
+  <h1>ng-content</h1> -->
+
+<!-- <app-project-data (click)="btnClicked($event)">
+    <div gp>go to the project</div>
+  </app-project-data> -->
+<!-- 
+  <app-project-data>
+    <div gp>go to the project</div>
+  </app-project-data>
+
+  <app-project-data>
+    <header><h1>Angular</h1></header>
+    <content>One framework. Mobile & desktop.</content>
+    <footer><b>Super-powered by Google </b></footer>
+  </app-project-data>
+
+  <app-project-data>
+    <header><h1 style="color:red;">React</h1></header>
+    <content>A JavaScript library for building user interfaces</content>
+    <footer><b>Facebook Open Source </b></footer>
+  </app-project-data> -->
+
+<!-- <app-project-data>
+    <h1>John</h1>
+    <span class="phone">555-433-3322</span>
+    <p>John is a coworker.</p>
+  </app-project-data> -->
+<!-- </section> -->
+
+<section>
+  <h1>ngTemplateOutlet</h1>
+  <ng-container *ngIf="isgood; else loading">
+    <h1>true</h1>
+    <ng-container *ngTemplateOutlet="goHome"></ng-container>
+  </ng-container>
+  <ng-template #loading>
+    <ng-container *ngTemplateOutlet="goHome"></ng-container>
+  </ng-template>
+
+  <ng-template #goHome>
+    <p>
+      Consider a view where you have to insert a template at multiple places.
+      For example, a company logo to be placed within a website. We can achieve
+      it by writing the template for the logo once and reusing it everywhere
+      within the view.
+    </p>
+  </ng-template>
+</section>
